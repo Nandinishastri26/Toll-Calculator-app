@@ -1,12 +1,18 @@
 import React from 'react'
 import MainPage from './components/MainPage'
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 
 const App = () => {
   return (
-    <div>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <div>
       <MainPage/>
-    </div>
+      </div>
+     
+    </LocalizationProvider>
+    
   )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import DateAndTimePicker from './DateAndTimePicker'
 
 const OptionalFuel = () => {
   return (
@@ -24,6 +25,10 @@ const OptionalFuel = () => {
   <p className='text-xl font-bold '>Enter Fuel Price</p>
   <input className='border-b-2 border-gray-700 w-[12%] ' type="number"/>
   <span>₹ per liter</span>
+ </div>
+ <div className='ml-9 pt-4'>
+  <p className='text-xl font-bold mb-3'>Departure Time</p>
+   <DateAndTimePicker/>
  </div>
         </div>
     
