@@ -1,7 +1,8 @@
 import React from 'react'
 import DateAndTimePicker from './DateAndTimePicker'
 
-const OptionalFuel = () => {
+const OptionalFuel = ({city,highway,fuelPrice,time,changeHandler}) => {
+ // const {city,highway,fuelPrice,time,changeHandler}=info;
   return (
     <div className='flex flex-col'>
         <div className='  items-center justify-center w-full p-2 mx-4 my-3 '>
@@ -13,22 +14,37 @@ const OptionalFuel = () => {
     </tr>
   <tr className='mx-2 my-2 justify-around items-center ' >
     <td className='mx-2 px-2'>
-      <input className='border-b-4 border-gray-700 w-[75%]  float-left' type="number"/>   
+      <input  
+      name="city"  
+      value={city}
+      onChange={changeHandler}
+      className='border-b-4 border-gray-700 w-[75%]  float-left' 
+      type="number"/>   
     </td>
     <td>
-    <input className='border-b-4 border-gray-700  w-[75%]  float-right' type="number"/>
+    <input 
+    name="highway"  
+    value={highway}
+    onChange={changeHandler}
+    className='border-b-4 border-gray-700  w-[75%]  float-right' 
+    type="number"/>
     </td>
   </tr>
 </table>
  </div>  
  <div className='ml-9'>
   <p className='text-xl font-bold '>Enter Fuel Price</p>
-  <input className='border-b-2 border-gray-700 w-[12%] ' type="number"/>
+  <input 
+   name="fuelPrice" 
+   value={fuelPrice}
+   onChange={changeHandler}
+   className='border-b-2 border-gray-700 w-[12%]' 
+   type="number"/>
   <span>₹ per liter</span>
  </div>
  <div className='ml-9 pt-4'>
   <p className='text-xl font-bold mb-3'>Departure Time</p>
-   <DateAndTimePicker/>
+   <DateAndTimePicker time={time} changeHandler={changeHandler}/>
  </div>
         </div>
     
